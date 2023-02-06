@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MENU_LINKS } from './config/side-menu.config';
-import { ScrollService } from './config/sidenav-scroller.service';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +18,7 @@ export class AppComponent {
   });
 
   constructor(
-    private _formBuilder: FormBuilder,
-    private scrollService: ScrollService
+    private _formBuilder: FormBuilder
   ) {}
 
   ngOnInit() {}
@@ -30,6 +28,6 @@ export class AppComponent {
   }
 
   onSectionChange(sectionId: string) {
-    this.scrollService.selectionChange(sectionId);
+    this.currentSection = sectionId;
   }
 }

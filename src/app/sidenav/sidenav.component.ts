@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ScrollService } from 'src/app/config/sidenav-scroller.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,11 +10,7 @@ export class SidenavComponent {
   @Output() showSubmenuEvent: EventEmitter<HTMLElement> = new EventEmitter();
   @Input() currentSection: string;
 
-  constructor(private scrollService: ScrollService) {
-    this.scrollService.currentSelection.subscribe(
-      (selection: any) => (this.currentSection = selection)
-    );
-  }
+  constructor() {}
 
   showSubmenu(itemEl: HTMLElement) {
     this.showSubmenuEvent.emit(itemEl);
