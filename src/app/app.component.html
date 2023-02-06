@@ -1,0 +1,53 @@
+<ng-container>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top">
+      <app-sidenav [menuSidebar]="menuSidebar" (showSubmenuEvent)="showSubmenuEvent($event)"
+        [currentSection]="currentSection"></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button (click)="sidenav.toggle()" mat-icon-button aria-label="Menu Icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>BNYM Side Nav Project</span>
+      </mat-toolbar>
+      <section scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)"
+        style="height: calc(100vh - 65px); overflow-y: auto;">
+        <div style="height: 600px;" id="account_information">
+          Account Information
+        </div>
+        <div style="height: 600px;" id="contact_information">
+          Contact Information
+        </div>
+        <div style="height: 600px;" id="general_information">
+          General Information
+        </div>
+        <div style="height: 600px;" id="personal_information">
+          Personal Information
+        </div>
+        <div style="height: 600px;" id="address_information">
+          Address Information
+        </div>
+        <div style="height: 600px;" id="employment_information">
+          Employment Information
+        </div>
+        <div style="height: 600px;" id="customer_due_diligence">
+          Customer Due Diligence
+        </div>
+        <div style="height: 600px;" id="id_information">
+          ID information
+        </div>
+        <div style="height: 600px;" id="financial_information">
+          Financial Information
+        </div>
+        <div style="height: 600px;" id="source_of_wealth">
+          Source of Wealth
+        </div>
+        <div style="height: 600px;" id="suitability">
+          Suitability
+        </div>
+        <div style="height: 200px;"></div>
+      </section>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>

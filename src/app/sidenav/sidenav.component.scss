@@ -1,0 +1,98 @@
+.sidebar .nav-links {
+  height: calc(100% - 100px);
+  overflow-y: auto;
+  width: 100%;
+  margin: 0px;
+  padding-left: 0px;
+  overflow-x: hidden;
+}
+.sidebar .nav-links li {
+  list-style: none;
+}
+.sidebar .nav-links > li {
+  position: relative;
+  width: fit-content;
+}
+.sidebar .nav-links li:hover {
+  background: #055160;
+}
+.sidebar .nav-links li.active {
+  background: teal;
+}
+.sidebar .nav-links .dropdown-title {
+  width: 260px;
+  overflow: hidden;
+  transition: all 0.52s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.sidebar .nav-links li i {
+  height: 50px;
+  min-width: 60px;
+  text-align: center;
+  line-height: 50px;
+  color: #055160;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li:hover i,
+.sidebar .nav-links li.active i {
+  color: white;
+}
+.sidebar .nav-links li.showMenu i.arrow {
+  transform: rotate(-180deg);
+}
+.sidebar .nav-links li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+}
+.sidebar .nav-links li a .link_name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #055160;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover a .link_name,
+.sidebar .nav-links li.active a .link_name {
+  color: white;
+}
+.sidebar .nav-links li .sub-menu {
+  padding: 6px 6px 14px 70px;
+  background: white;
+  display: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li.showMenu .sub-menu {
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a {
+  color: #055160;
+  font-size: 15px;
+  padding: 7px 0;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu li {
+  padding-left: 10px;
+}
+.sidebar .nav-links li .sub-menu li:hover a,
+.sidebar .nav-links li .sub-menu li.active a {
+  color: white;
+}.sidebar .nav-links li .sub-menu .link_name {
+  display: none;
+}
+.sidebar .nav-links li .sub-menu.blank {
+  pointer-events: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank,
+.sidebar .nav-links li.active .sub-menu.blank {
+  top: 50%;
+  transform: translateY(-50%);
+}

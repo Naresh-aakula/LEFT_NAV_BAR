@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <ul class="nav-links" id="nav-links">
+    <li *ngFor="let item of menuSidebar" #itemEl
+      [ngClass]="{ 'active': isCurrentSelection(item, currentSection), 'showMenu': showSubMenu(item, currentSection) }">
+      <div *ngIf="item.sub_menu.length == 0" class="dropdown-title">
+        <a (click)="scrollTo(item.id)">
+          <i class="material-icons">{{item.icon}}</i>
+          <span class="link_name">{{item.link_name}}</span>
+        </a>
+      </div>
+      <div *ngIf="item.sub_menu.length > 0" class="dropdown-title" (click)="showSubmenu(itemEl)">
+        <a>
+          <i class="material-icons">{{item.icon}}</i>
+          <span class="link_name">{{item.link_name}}</span>
+        </a>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+      <ul class="sub-menu" [class.blank]="item.sub_menu.length == 0">
+        <li><a class="link_name">{{item.link_name}}</a></li>
+        <li *ngFor="let item_sub of item.sub_menu" [ngClass]="{ 'active': currentSection === item_sub.id }">
+          <a (click)="scrollTo(item_sub.id)">{{item_sub.link_name}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
